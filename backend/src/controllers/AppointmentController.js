@@ -1,11 +1,31 @@
+const { Op } = require("sequelize");
 const AppointmentModel = require("../models/Appointment")
 const validateCPF = require("../utils/validateCPF")
 
 module.exports = {
   async index(req, res) {
-    const appointments = await AppointmentModel.findAll();
+    const { limit = 10, page = 0, search = "" } = req.query
+
+    const { count: size, rows: appointments } = await AppointmentModel.findAndCountAll({
+      where: {
+        [Op.or]: {
+          name: { [Op.iLike]: `%${search}%` },
+          cpf: { [Op.like]: `%${search}%` },
+          profession: { [Op.iLike]: `%${search}%` },
+        }
+      },
+      limit,
+      offset: parseInt(page) * parseInt(limit)
+    });
+
+    console.log(search.toLowerCase())
     
-    return res.json(appointments)
+    return res.json({
+      size,
+      limit,
+      page,
+      appointments
+    })
   },
 
   async store(req, res) {
