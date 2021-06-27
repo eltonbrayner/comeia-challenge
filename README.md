@@ -13,6 +13,8 @@ Formulário para agendamento de vacina
   - Comorbidade (descrição)
   - Data
   - Hora
+- Consultar agendamento
+  - CPF
 - Area Administrativa
   - Login Autenticado do ADM (JWT)
   - Listar todos os agendamentos Cadastrados
@@ -24,6 +26,11 @@ Formulário para agendamento de vacina
 
 - Banco de Dados: Postgres
 - Autenticação do ADM: JWT
+  - Sessão expira em 5 minutos
+  - Rota de listagem de todos os agendamentos
+  - Rota de deletar agendamento
+- Validação de CPF
+- Validação se já existe agenda para o CPF
 
 
 ## Frontend [ReactJS]
