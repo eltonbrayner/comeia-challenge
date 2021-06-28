@@ -17,8 +17,6 @@ module.exports = {
       limit,
       offset: parseInt(page) * parseInt(limit)
     });
-
-    console.log(search.toLowerCase())
     
     return res.json({
       size,
