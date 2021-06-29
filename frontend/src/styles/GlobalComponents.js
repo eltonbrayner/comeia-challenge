@@ -6,14 +6,10 @@ export const Button = styled.button`
   background: ${(props) => (props.primary ? 'var(--green)' : 'none')};
   color: ${(props) => (props.primary ? 'white' : '#3E3E3E')};
   font-weight: bold;
-  margin-right: ${(props) => props.secundary && '1rem'};
   margin-top: 1rem;
   transition: filter 0.2s;
   &:hover {
     filter: brightness(1.5);
-  }
-  & + & {
-    margin-left: 1rem;
   }
 `;
 

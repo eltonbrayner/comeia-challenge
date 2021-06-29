@@ -12,6 +12,10 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   gap: 2rem;
 
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
+
   div {
     width: 100%;
   }
@@ -23,5 +27,8 @@ export const Content = styled.div`
     text-align: center;
     margin: 1rem 0;
     color: #3e3e3e;
+    @media (max-width: 640px) {
+      font-size: 1.5rem;
+    }
   }
 `;

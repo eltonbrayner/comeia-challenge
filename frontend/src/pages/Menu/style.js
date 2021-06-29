@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const Title = styled.h1`
   text-align: center;
   color: var(--titleColor);
+  @media (max-width: 640px) {
+    font-size: 2rem;
+  }
 `;
 
 export const MenuBtn = styled.button`
@@ -23,5 +26,9 @@ export const MenuBtn = styled.button`
 
   &:hover {
     filter: brightness(1.5);
+  }
+
+  @media (max-width: 640px) {
+    font-size: 1.5rem;
   }
 `;

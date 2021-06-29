@@ -15,6 +15,10 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   gap: 2rem;
 
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
+
   div {
     width: 100%;
   }
