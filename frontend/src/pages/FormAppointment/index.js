@@ -30,7 +30,7 @@ export function FormAppointment() {
 
   return (
     <S.Content className="animeShow">
-      <h1>CADASTRO PARA VACINAÇÃO COVID-19</h1>
+      <h1>Agendamento para Vacinação</h1>
       {error && <G.Error>{error}</G.Error>}
       <Formik
         validationSchema={schema}
@@ -100,7 +100,12 @@ export function FormAppointment() {
             {comorbidity && (
               <div className="animeDown">
                 <label htmlFor="comorbidity">Qual tipo de comorbidade?</label>
-                <Field id="comorbidity" name="comorbidity" type="text" />
+                <Field
+                  required={comorbidity}
+                  id="comorbidity"
+                  name="comorbidity"
+                  type="text"
+                />
                 {errors.comorbidity && touched.comorbidity && (
                   <S.Error>{errors.comorbidity}</S.Error>
                 )}

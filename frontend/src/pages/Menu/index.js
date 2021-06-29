@@ -1,18 +1,19 @@
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import { GlobalContext } from '../../GlobalContext';
 import * as S from './style';
 
 export function Menu() {
-  const navigate = useNavigate();
+  const { pageNavigate } = React.useContext(GlobalContext);
   return (
     <div className="animeLeft">
       <S.Title>Menu de Acesso</S.Title>
-      <S.MenuBtn onClick={() => navigate('Appointment')}>
+      <S.MenuBtn onClick={() => pageNavigate('Appointment')}>
         Realizar Agendamento
       </S.MenuBtn>
-      <S.MenuBtn onClick={() => navigate('Consult')}>
+      <S.MenuBtn onClick={() => pageNavigate('Consult')}>
         Consultar Agendamento
       </S.MenuBtn>
-      <S.MenuBtn onClick={() => navigate('Login')}>Administração</S.MenuBtn>
+      <S.MenuBtn onClick={() => pageNavigate('Login')}>Administração</S.MenuBtn>
     </div>
   );
 }

@@ -4,7 +4,7 @@ const validateCPF = require('../utils/validateCPF');
 
 module.exports = {
   async index(req, res) {
-    const { limit = 10, page = 0, search = '' } = req.query;
+    const { limit = 5, page = 0, search = '' } = req.query;
 
     const { count: size, rows: appointments } =
       await AppointmentModel.findAndCountAll({
@@ -19,7 +19,8 @@ module.exports = {
         offset: parseInt(page) * parseInt(limit),
       });
 
-    return res.json({
+    return res.status(200).json({
+      status: 200,
       size,
       limit,
       page,
@@ -113,7 +114,7 @@ module.exports = {
     }
 
     await AppointmentModel.destroy(query)
-      .then((el) =>
+      .then(() =>
         res
           .status(200)
           .json({ status: 200, message: 'Appointment deleted with success' }),

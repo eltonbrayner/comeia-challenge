@@ -7,8 +7,11 @@ export const Container = styled.div`
     width: 100%;
     border-spacing: 0 0.8rem;
 
-    tr:hover {
-      filter: brightness(0.9);
+    tr {
+      transition: filter 0.5s;
+      &:hover {
+        filter: brightness(0.9);
+      }
     }
 
     th {

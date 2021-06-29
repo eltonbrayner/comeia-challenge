@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Content = styled.main`
   margin: 1rem 3rem;
+  padding-bottom: 3rem;
 `;
 
 export const Box = styled.div`
