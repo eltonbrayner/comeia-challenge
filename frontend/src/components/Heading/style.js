@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Content = styled.header`
   display: flex;
@@ -9,9 +9,5 @@ export const Content = styled.header`
 
   img {
     width: min(24rem, 100%);
-  }  
-
-  h1 {
-    margin: 1rem;
   }
-`
+`;

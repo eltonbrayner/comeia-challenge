@@ -1,8 +1,8 @@
-const jwt = require("jsonwebtoken")
+const jwt = require('jsonwebtoken');
 
 function verifyJWT(req, res, next) {
   const token = req.headers['x-access-token'];
-  if(!token)
+  if (!token)
     return res.status(200).json({
       status: 401,
       auth: false,
@@ -11,17 +11,17 @@ function verifyJWT(req, res, next) {
     });
 
   jwt.verify(token, process.env.SECRET, (err, decoded) => {
-    if(err)
+    if (err)
       return res.status(200).json({
         status: 500,
         auth: false,
         token: null,
-        message: 'Failed to authenticate token'
+        message: 'Failed to authenticate token',
       });
-    
-    req.body.userIdJwt = decoded.id;
+
+    req.body.userToken = token;
     next();
-  })
+  });
 }
 
-module.exports = { verifyJWT, jwt }
+module.exports = { verifyJWT, jwt };

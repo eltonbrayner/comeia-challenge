@@ -10,7 +10,7 @@ export function success(props) {
     timerProgressBar: true,
     showConfirmButton: false,
     timer: 1810,
-    html: `<span style="color: #FFF; font-weight: bold">${props}</span>`,
+    html: `<span style="color: #FFF; font-size: 1.5rem;font-weight: bold">${props}</span>`,
   });
 }
 
@@ -21,6 +21,6 @@ export function danger(props) {
     timerProgressBar: true,
     showConfirmButton: false,
     timer: 1810,
-    html: `<span style="color: #FFF; font-weight: bold">${props}</span>`,
+    html: `<span style="color: #FFF; font-size: 1.5rem;font-weight: bold">${props}</span>`,
   });
 }

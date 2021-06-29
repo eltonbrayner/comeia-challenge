@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
   :root {
@@ -7,6 +7,8 @@ export const GlobalStyles = createGlobalStyle`
 
     --inputBackground: #e7e9ee;
     --inputBorder: #d7d7d7;
+
+    --titleColor: #3e3e3e;
 
     --red: #D9534F;
     --green: #1B7037;
@@ -29,6 +31,7 @@ export const GlobalStyles = createGlobalStyle`
   button {
     font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
+    height: 4rem;
   }
 
   body {
@@ -44,7 +47,6 @@ export const GlobalStyles = createGlobalStyle`
   input, textarea, select {
     border: 1px solid var(--inputBorder);
     display: block;
-    min-width: 25rem;
     width: 100%;
     padding: 0.8rem;
     border-radius: 0.4rem;
@@ -54,14 +56,10 @@ export const GlobalStyles = createGlobalStyle`
     resize: none
   }
 
-  textarea {
-    height: 10rem;
-  }
-
   input:focus,
-  input:hover,
-  .editor:focus,
-  .editor:hover
+  input:hover
+  select:hover,
+  select:focus
   {
     outline: none; 
     border-color: var(--green);
@@ -75,8 +73,38 @@ export const GlobalStyles = createGlobalStyle`
     line-height: 1;
     padding-bottom: 0.5rem;
   }
+
   [disabled] {
     opacity: 0.6;
     cursor: not-allowed
   }
-`
+
+  .animeLeft {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: animePage 1s forwards; 
+  }
+  
+  .animeShow {
+    opacity: 0;
+    animation: animePage 1s forwards; 
+  }
+
+  .animeDown {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: animePage 0.5s forwards; 
+  }
+
+  @keyframes animePage {
+    to {
+      opacity: 1;
+      transform: initial;
+    }
+  }
+  @media(max-width: 51rem){
+    input, textarea {
+      min-width: 16.5rem;
+    }
+  }
+`;

@@ -1,7 +1,6 @@
 function validateCPF(cpf) {	
 	cpf = cpf.replace(/[^\d]+/g,'');	
 	if(cpf == '') return false;	
-	// Elimina CPFs invalidos conhecidos	
 	if (cpf.length != 11 || 
 		cpf == "00000000000" || 
 		cpf == "11111111111" || 
@@ -14,7 +13,6 @@ function validateCPF(cpf) {
 		cpf == "88888888888" || 
 		cpf == "99999999999")
 			return false;		
-	// Valida 1o digito	
 	add = 0;	
 	for (i=0; i < 9; i ++)		
 		add += parseInt(cpf.charAt(i)) * (10 - i);	
@@ -23,7 +21,6 @@ function validateCPF(cpf) {
 			rev = 0;	
 		if (rev != parseInt(cpf.charAt(9)))		
 			return false;		
-	// Valida 2o digito	
 	add = 0;	
 	for (i = 0; i < 10; i ++)		
 		add += parseInt(cpf.charAt(i)) * (11 - i);	

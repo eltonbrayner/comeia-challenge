@@ -1,16 +1,13 @@
-
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { GlobalStorage } from './GlobalContext';
 
-import { FormPage } from './pages/FormPage'
+import { MainContent } from './pages';
 
 function App() {
   return (
     <BrowserRouter>
       <GlobalStorage>
-        <Routes>
-          <Route path="/" element={<FormPage />} />
-        </Routes>
+        <MainContent />
       </GlobalStorage>
     </BrowserRouter>
   );
