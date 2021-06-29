@@ -40,7 +40,8 @@ export const GlobalStorage = ({ children }) => {
       if (response.data.status === 400)
         throw new Error('Ocorreu um erro ao tentar realizar o agendamento.');
 
-      return success(`Agendamento realizado com sucesso.`);
+      success(`Agendamento realizado com sucesso.`);
+      navigate('/');
     } catch (err) {
       return setError(err.message);
     } finally {
