@@ -3,9 +3,15 @@ import styled from 'styled-components';
 export const Container = styled.div`
   margin-top: 1rem;
 
+  overflow-x: auto;
+
   table {
     width: 100%;
     border-spacing: 0 0.8rem;
+
+    @media (max-width: 640px) {
+      font-size: 1rem;
+    }
 
     tr {
       transition: filter 0.5s;
